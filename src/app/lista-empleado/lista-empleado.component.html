@@ -1,12 +1,11 @@
 <div class="flex flex-col space-y-2">
   <div
-    class="flex flex-col p-5 rounded bg-gray-700 shadow-md w-full md:w-2/4 lg:w-3/4 xl:w-2/4 mx-auto text-center space-y-8 mt-2"
+    class="flex flex-col p-5 rounded bg-gray-700 shadow-md w-full md:w-3/4 lg:w-2/3 xl:w-1/2 mx-auto text-center space-y-8 mt-2"
   >
     <h1 class="text-4xl text-white">Lista de Empleados</h1>
     <div
       class="grid grid-cols-7 gap-3 px-2 sm:px-0 text-white font-thin text-lg"
     >
-      <!-- Reducir el espacio entre columnas aquí si es necesario -->
       <span>Avatar</span>
       <span>Nombre</span>
       <span>Apellido</span>
@@ -15,13 +14,11 @@
       <span>Remoto</span>
       <span>Acciones</span>
     </div>
-    <ul class="flex flex-col p-2 round w-full text-center mt-4">
-      <!-- Ajustar el margen superior aquí -->
+    <ul class="flex flex-col p-2 rounded w-full text-center mt-4">
       <li
         *ngFor="let empleado of empleados"
         class="grid grid-cols-7 gap-1 sm:gap-2 items-center bg-gray-800 text-white rounded p-1 sm:p-2 text-xs sm:text-base"
       >
-        <!-- Reducir el espacio entre columnas para dispositivos pequeños y medianos -->
         <img
           src="https://api.multiavatar.com/Binx Bond.png"
           alt="Avatar de {{ empleado.nombre }}"
@@ -35,9 +32,10 @@
           type="checkbox"
           [checked]="empleado.remoto"
           (change)="desmarcaRemoto()"
+          class="mx-auto"
         />
         <button
-          class="bg-red-500 p-2 rounded text-white"
+          class="bg-red-500 p-2 rounded text-white hover:bg-red-700"
           (click)="deleteEmpleado(empleado.id)"
         >
           Eliminar
