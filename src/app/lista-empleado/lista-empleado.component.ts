@@ -27,6 +27,7 @@ export class ListaEmpleadoComponent {
       puesto: '',
       telefono: '',
       remoto: false,
+      avatar: '',
     });
     this.nombre = '';
   }
@@ -45,5 +46,9 @@ export class ListaEmpleadoComponent {
 
   updateEmpleado(id: number, empleado: Empleado) {
     this.empleadoService.updateEmpleado(id, empleado);
+  }
+  getAvatar(empleado: Empleado) {
+    const nombreUrl = encodeURIComponent(empleado.nombre);
+    return `https://api.multiavatar.com/${nombreUrl}.png`;
   }
 }

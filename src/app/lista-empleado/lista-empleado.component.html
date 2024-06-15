@@ -20,7 +20,7 @@
         class="grid grid-cols-7 gap-1 sm:gap-2 items-center bg-gray-800 text-white rounded p-1 sm:p-2 text-xs sm:text-base"
       >
         <img
-          src="https://api.multiavatar.com/Binx Bond.png"
+          [src]="getAvatar(empleado)"
           alt="Avatar de {{ empleado.nombre }}"
           class="w-10 h-10 rounded-full mx-auto"
         />
