@@ -5,6 +5,7 @@ export class Empleado {
     public apellido: string,
     public puesto: string,
     public telefono: string,
-    public remoto: boolean = false
+    public remoto: boolean = false,
+    public avatar: string = ''
   ) {}
 }
