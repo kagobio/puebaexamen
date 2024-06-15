@@ -1,0 +1,67 @@
+<form
+  #form="ngForm"
+  (ngSubmit)="onSubmit(form)"
+  class="flex flex-col p-3 sm:p-5 rounded bg-gray-700 shadow-md w-full md:w-2/4 lg:w-3/4 xl:w-2/4 md:mx-auto text-center space-y-4 md:mt-5"
+>
+  <h2 class="text-4xl text-white text-center">Formulario Empleado</h2>
+
+  <div class="flex justify-between space-x-4">
+    <div class="flex-1">
+      <h1 class="text-white text-left">Nombre</h1>
+      <input
+        [(ngModel)]="empleado.nombre"
+        name="nombre"
+        id=" nombre"
+        class="p-2 rounded bg-gray-800 text-white w-full"
+        placeholder="Juan"
+        required
+      />
+    </div>
+    <div class="flex-1">
+      <h1 class="text-white text-left">Apellido</h1>
+      <input
+        [(ngModel)]="empleado.apellido"
+        name="apellido"
+        id=" apellido"
+        class="p-2 rounded bg-gray-800 text-white w-full"
+        placeholder="Peréz"
+        required
+      />
+    </div>
+  </div>
+  <div class="flex flex-col">
+    <h1 class="text-white text-left">Puesto</h1>
+    <input
+      [(ngModel)]="empleado.puesto"
+      name="puesto"
+      id=" puesto"
+      class="p-2 rounded bg-gray-800 text-white"
+      placeholder="Desarrollador Web"
+      required
+    />
+  </div>
+  <div class="flex flex-col">
+    <h1 class="text-white text-left">Teléfono</h1>
+    <input
+      [(ngModel)]="empleado.telefono"
+      name="telefono"
+      id=" telefono"
+      class="p-2 rounded bg-gray-800 text-white"
+      placeholder="+52 1 123 456 7890"
+      required
+    />
+  </div>
+  <label class="text-white">
+    <input type="checkbox" [(ngModel)]="empleado.remoto" name="remoto" />
+    Trabaja de forma remota
+  </label>
+
+  <div class="flex justify-center">
+    <button
+      type="submit"
+      class="p-2 bg-green-500 rounded text-white hover:bg-green-700"
+    >
+      Agregar Empleado
+    </button>
+  </div>
+</form>
